@@ -76,7 +76,7 @@ gen_crd_doc() {
 {
   # get flux cmd docs
   TMP="$(mktemp -d)"
-  git clone -q --depth 1 git@github.com:fluxcd/flux2 "$TMP"
+  git clone -q --depth 1 https://github.com/fluxcd/flux2 "$TMP"
   if [ ! -d "$FLUX_DIR" ]; then
     mkdir "$FLUX_DIR"
   fi
