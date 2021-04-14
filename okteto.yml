@@ -1,0 +1,13 @@
+name: hugo
+image: kingdonb/hugo:0.78.2-extended
+workdir: /site
+# command: ["bash", "--login"]
+command:
+  - sh
+  - -c
+  - make theme; make serve
+autocreate: true
+forward:
+  - 1313:1313
+persistentVolume:
+  enabled: true
