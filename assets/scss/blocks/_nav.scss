@@ -1,8 +1,12 @@
 // override docsy styles
 @include media-breakpoint-down(md) {
+  .td-navbar .td-navbar-nav-scroll {
+    overflow: visible !important;
+  }
   .navbar-nav {
     margin-top: 0 !important;
-  
+    overflow: visible !important;
+
     .nav-link {
       font-size: 1rem;
     }
