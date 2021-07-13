@@ -77,7 +77,8 @@ def write_adopters_section_for_landing_page(data):
         </div>
 """.format(active='active' if data.index(entry) == 0 else '',
            logo=entry['logo'],
-           caption='')
+           caption=entry['name'] if 'needs-name' in entry and \
+                         entry['needs-name'] else '')
 
     out_file = os.path.join(content_dir, 'adopters_carousel_include.html')
     if os.path.exists(out_file):
