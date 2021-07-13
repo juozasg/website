@@ -2,6 +2,7 @@
 
 import glob
 import os
+import random
 import shutil
 import sys
 
@@ -67,6 +68,7 @@ def write_card_text(f, company_name, company_url, company_logo):
 
 def write_adopters_section_for_landing_page(data):
     html = ""
+    random.shuffle(data)
     for entry in data:
         if not entry['logo'].endswith(DEFAULT_LOGO):
             html += \
@@ -116,7 +118,8 @@ def main():
             if 'logo' not in company:
                 company['logo'] = DEFAULT_LOGO
             company['logo'] = fix_up_logo(adopters_dir, company['logo'])
-            all_companies += [company]
+            if company not in all_companies:
+                all_companies += [company]
             write_card_text(f, company['name'], company['url'], company['logo'])
 
         f.write('''{{< /cardpane >}}
