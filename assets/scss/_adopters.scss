@@ -67,6 +67,7 @@ $foreground-color: rgba($flux-white, 0.85);
       width: 100vw;
 
       padding: 0 15px;
+      margin-left: -15px;
 
       .foreground-item {
         height: 620px;
@@ -81,7 +82,7 @@ $foreground-color: rgba($flux-white, 0.85);
 
         max-width: 600px;
         position: relative;
-        left: 0;
+        left: 15px;
         right: 0;
         margin: 0rem auto;
 
